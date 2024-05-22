@@ -3,15 +3,20 @@ package main
 import (
 	"bytes"
 	"go/ast"
-	"go/format"
+	"go/printer"
 	"go/token"
 	"os"
 )
 
 func PrintOut(filename string, tree *ast.File) error {
+	cfg := &printer.Config{
+		Mode:     printer.UseSpaces,
+		Tabwidth: 4,
+	}
+
 	fset := token.NewFileSet()
 	var buf bytes.Buffer
-	err := format.Node(&buf, fset, tree)
+	err := cfg.Fprint(&buf, fset, tree)
 	if err != nil {
 		return err
 	}
