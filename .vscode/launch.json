@@ -12,7 +12,11 @@
             "program": "${workspaceFolder}/src/",
             "args": [
                 "--const=TemplateID",
+                "--name=Templates",
                 "--dict=Template",
+                "--output=..\\test\\dictionary.go",
+                "--package=templates",
+                "--suffix=Data",
                 "C:\\Users\\noise\\Documents\\go-enum-util\\test\\ids.go"
             ]
         }
