@@ -18,6 +18,7 @@ var (
 	dictType    = flag.String("dict", "", "desired type for dictionary entries")
 	dictName    = flag.String("name", "", "desired name for dictionary")
 	packageName = flag.String("package", "", "package if output file is empty")
+	output_json = flag.String("json", "", "json output file")
 	output      = flag.String("output", "", "set output file")
 )
 
@@ -56,9 +57,10 @@ func main() {
 	// get all global constants & type of constants & desired type for map
 	var struct_type *ast.TypeSpec
 	var consts []string
+	var values []string
 
 	for i := range args {
-		cs, st, err := ParseIn(args[i], *constType, *dictType)
+		cs, vs, st, err := ParseIn(args[i], *constType, *dictType)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -68,6 +70,7 @@ func main() {
 		}
 
 		consts = append(consts, cs...)
+		values = append(values, vs...)
 	}
 
 	// generate structs
@@ -110,4 +113,16 @@ func main() {
 	}
 
 	fmt.Println("succesfully generated file")
+
+	if len(*output_json) > 0 {
+		list, err := GenerateJSON(*output_json, values)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		err = PrintOutJSON(*output_json, list)
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
 }
