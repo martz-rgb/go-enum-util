@@ -1,2 +1,4 @@
 github.com/fatih/structtag v1.2.0 h1:/OdNE99OxoI/PqaW/SuSK9uxxT3f/tcSZgon/ssNSx4=
 github.com/fatih/structtag v1.2.0/go.mod h1:mBJUNpUnHmRKrKlQQlmCrh5PuhftFbNv8Ys4/aAZl94=
+github.com/martz-rgb/go-enum-util v0.0.0-20240522140203-46281547dafa h1:T1AxB9sfXoDMhlmT8qh0Igu0abdXbbZmG4J0n80bxXo=
+github.com/martz-rgb/go-enum-util v0.0.0-20240522140203-46281547dafa/go.mod h1:p8N3RsUrZFL9nU631wtP/NzwgvEq5JLKOLYgU7I/UZY=
