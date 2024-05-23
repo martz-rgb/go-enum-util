@@ -9,7 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "${workspaceFolder}/src/",
+            "program": "${workspaceFolder}/enumutil/",
             "args": [
                 "--const=TemplateID",
                 "--name=Templates",
@@ -17,6 +17,7 @@
                 "--output=..\\test\\dictionary.go",
                 "--package=templates",
                 "--suffix=Data",
+                "--json=templates.json",
                 "C:\\Users\\noise\\Documents\\go-enum-util\\test\\ids.go"
             ]
         }
